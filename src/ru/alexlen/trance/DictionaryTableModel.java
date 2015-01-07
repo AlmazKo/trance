@@ -9,14 +9,14 @@ import java.util.TreeMap;
 /**
  * @author Almazko
  */
-public class TransModel extends AbstractTableModel {
+public class DictionaryTableModel extends AbstractTableModel {
 
     Dictionary        mDic;
     ArrayList<String> columns;
     ArrayList<String> rows;
 
 
-    public TransModel(Dictionary dictionary)
+    public DictionaryTableModel(Dictionary dictionary)
     {
         mDic = dictionary;
 

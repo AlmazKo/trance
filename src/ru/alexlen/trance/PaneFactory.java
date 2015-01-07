@@ -38,7 +38,7 @@ public class PaneFactory implements ToolWindowFactory, Writer {
     {
 
         mProject = project;
-        TransResource.prjPrefixSize = project.getBaseDir().toString().length();
+        TranslateResource.prjPrefixSize = project.getBaseDir().toString().length();
 
         PsiManager psiManager = PsiManager.getInstance(project);
 
@@ -62,14 +62,14 @@ public class PaneFactory implements ToolWindowFactory, Writer {
 
         int x = 1;
         Dictionary dic;
-        TransResource res;
+        TranslateResource res;
         for (VirtualFile file : files) {
             psiFile = psiManager.findFile(file);
 
 
 //            return;
             if (psiFile != null) {
-                res = new TransResource(file, psiFile);
+                res = new TranslateResource(file, psiFile);
 
 
                 if (!all.containsKey(res.getName())) {
@@ -141,7 +141,7 @@ public class PaneFactory implements ToolWindowFactory, Writer {
     }
 
 
-    public void writeTarget(TransResource resource, int transId, final String value)
+    public void writeTarget(TranslateResource resource, int transId, final String value)
     {
         Log.i("WRITE: " + resource.getName() + ", value: '" + value + "'");
 

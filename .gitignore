@@ -1,3 +1,6 @@
 .idea
-trance.iml
+.gradle
+gradle*
 out
+trance.iml
+*.jar

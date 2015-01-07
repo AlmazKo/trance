@@ -10,10 +10,10 @@ public class Dictionary {
     //     <source,         Lang,   Unit
     TreeMap<String, TreeMap<String, Unit>> data      = new TreeMap<>();
     Set<String>                            languages = new HashSet<>();
-    public Map<String, TransResource>             resources = new HashMap<>();
+    public Map<String, TranslateResource> resources = new HashMap<>();
     private String mName;
 
-    void addTranslations(TransResource res, List<Unit> translations)
+    void addTranslations(TranslateResource res, List<Unit> translations)
     {
 
         TreeMap<String, Unit> variantSources;

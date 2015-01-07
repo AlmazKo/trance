@@ -16,12 +16,12 @@ import java.util.HashMap;
  * @author Almazko
  */
 public class TransEditor {
-    private JTable               mTable;
-    private JPanel               panel1;
-    private JEditorPane          editor;
-    private JTextField           editorLabel;
-    private JTextField           textField1;
-    private JList<TransResource> listDic;
+    private JTable                   mTable;
+    private JPanel                   panel1;
+    private JEditorPane              editor;
+    private JTextField               editorLabel;
+    private JTextField               textField1;
+    private JList<TranslateResource> listDic;
 
 
     final static int SOURCE_COL = 0;
@@ -41,7 +41,7 @@ public class TransEditor {
         mData = data;
         mWriter = writer;
 
-        ListModel<TransResource> list = new CollectionListModel<>(data.keySet());
+        ListModel<TranslateResource> list = new CollectionListModel<>(data.keySet());
         listDic.setModel(list);
 
         listDic.addMouseListener(new MouseAdapter() {
@@ -68,11 +68,11 @@ public class TransEditor {
     void showDictionary(final Dictionary dic)
     {
         Log.i("Open file" + dic.getResName());
-        final TransModel model = new TransModel(dic);
+        final DictionaryTableModel model = new DictionaryTableModel(dic);
 
         mTable.setModel(model);
 
-        TableRowSorter<TransModel> sorter = new TableRowSorter<>(model);
+        TableRowSorter<DictionaryTableModel> sorter = new TableRowSorter<>(model);
         mTable.setRowSorter(sorter);
 
         if (mTableListener != null) {

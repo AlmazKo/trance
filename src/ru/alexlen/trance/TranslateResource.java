@@ -6,7 +6,7 @@ import com.intellij.psi.PsiFile;
 /**
  * @author Almazko
  */
-public class TransResource {
+public class TranslateResource {
     final static int XLIFF_EXT_SIZE = 6;
     static       int prjPrefixSize  = -1;
 
@@ -16,7 +16,7 @@ public class TransResource {
 
     PsiFile mPsiFile;
 
-    public TransResource(VirtualFile file, PsiFile psiFile)
+    public TranslateResource(VirtualFile file, PsiFile psiFile)
     {
 
         mPsiFile  = psiFile;
