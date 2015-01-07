@@ -1,0 +1,40 @@
+<idea-plugin url="https://github.com/AlmazKo/trance">
+    <id>ru.alexlen.trance</id>
+    <name>Trans Editor</name>
+    <version>0.2.1</version>
+    <vendor email="a.s.suslov@gmail.com" url="http://trance.alexlen.ru">Almazko</vendor>
+    <description><![CDATA[Editor translate resources]]></description>
+    <change-notes><![CDATA[Nothing]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.xml</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <toolWindow id="Trance" icon="/icons/edit.png" anchor="right" factoryClass="ru.alexlen.trance.PaneFactory"/>
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+        <component>
+            <implementation-class>ru.alexlen.trance.EditorComponent</implementation-class>
+        </component>
+    </project-components>
+
+
+    <actions>
+        <action id="CopyLineUpAction4" class="ru.alexlen.trance.TextBoxes" text="TextBoxes" description="TextBoxes"
+                icon="/icons/edit.png">
+            <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+        </action>
+
+    </actions>
+</idea-plugin>
